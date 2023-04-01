@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div style="width: 600px;height: 400px;">
+
+    </div>
+</body>
+<script>
+    var myCharts = echarts.init(document.querySelector("div"),'dark')
+    var xData = [12,13,14,15,16,17]
+    var yData = [80,90,100,90,90,120]
+    var option = {
+        title:{
+            text:'速度变化'
+        },
+        label:{
+            show:'true'
+        },
+        xAxis:{
+            type:'category',
+            data:xData
+        },
+        yAxis:{
+            type:'value',
+            // scale:'true'
+        },
+        type:'line',
+        series:[
+            {
+                name:'速度',
+                data:yData,
+                type:'line',
+            }
+        ]
+        // scale:'true'
+    }
+    myCharts.setOption(option)
+</script>
+
+</html>

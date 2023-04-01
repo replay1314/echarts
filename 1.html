@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.2/dist/echarts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div style="width: 600px;height: 600px;">
+
+    </div>
+</body>
+<script>
+    var myCharts = echarts.init(document.querySelector("div"))
+    var dataMax = [
+        {
+            "name": "生命",
+            "max": 100
+        },
+        {
+            "name": "魔法",
+            "max": 100
+        },
+        {
+            "name": "攻击力",
+            "max": 100
+        },
+        {
+            "name": "防御力",
+            "max": 100
+        }
+    ]
+    var option = {
+        radar: {
+            indicator: dataMax,
+            // shape:'circle'
+        },
+        series: [
+            {
+                type: "radar",
+                areaStyle:{},
+                label:{
+                    // show:true
+                },
+                data: [
+                    {
+                    name: "战士",
+                    value: [100,80,80,100]
+                    },
+                    {
+                    name: "刺客",
+                    value: [80,100,100,80]
+                    }
+                ]
+            }
+        ]
+    }
+    myCharts.setOption(option)
+</script>
+
+</html>
